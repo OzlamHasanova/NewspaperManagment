@@ -29,9 +29,9 @@ public class SwaggerConfig {
     }
     private Info getApiInformation() {
         final Info info = new Info();
-        info.setTitle("Weather Stack Api");
+        info.setTitle("NewsPaper Management System");
         info.setVersion("1.0.0");
-        info.setDescription("API documentation for the Weather Stack application");
+        info.setDescription("API documentation for the NewsPaper Management application");
         return info;
     }
 

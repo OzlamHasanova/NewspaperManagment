@@ -7,26 +7,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicInsert;
 
-import java.util.Date;
-import java.util.List;
-
 @Data
 @Entity
-@Table(name = "newspapers")
+@Table(name = "pages")
 @Builder
 @DynamicInsert
 @NoArgsConstructor
 @AllArgsConstructor
-public class Newspaper {
+public class Page {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date date;
     private String title;
     private String editorName;
-    private String coverImage;
+    private String wordDocument;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "newspaper")
-    private List<Page> pages;
+    @ManyToOne
+    @JoinColumn(name = "newspaper_id")
+    private Newspaper newspaper;
 }
-
